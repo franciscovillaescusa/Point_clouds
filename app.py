@@ -61,7 +61,13 @@ if MT:
 
     st.title('Merger trees')
 
-    st.markdown('')
+    st.markdown("""Marger trees are directed acyclic graphs, $(V,E)$, where
+- Nodes represent individual dark matter halos (or subhalos) at a specific point in cosmic time (or redshift). $V=\{h_1, h_2, h_3,...h_n\}$. Typical node properties are mass, concetration, positions...etc.
 
-    st.image("plots/merger_tree.png")
+- Edges represent progenitor-descendant relationships, pointing from a progenitor halo (earlier time) to its descendant halo (later time). $E=\{(h_i,h_j)|h_i\leftarrow h_j\}$. 
+
+The diagram below shows a merger tree from a CAMELS-SAM simulation. The left-most red point represents a dark matter halo at current time from a CAMELS-SAM simulation. From left to right we go further back in time. The sequence with the red dots is called the main branch. When two or more nodes join, it means that physically, two or several halos has merged to produce a bigger halo.""")
+
+    st.image("plots/merger_tree.png", use_container_width=True)
+
     
