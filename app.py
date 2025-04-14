@@ -16,7 +16,7 @@ if not (PC or MT or glosary):
 
     We provide two kind of cosmological datasets to train and benchmark models:
     - **Point clouds**. These are collections of points representing galaxies or halos in different universes.
-    - **Merger trees**. These are graphs (N,E) representing the past time evolution of a dark matter halo. 
+    - **Merger trees**. These are graphs $G=(V,E)$ representing the past time evolution of a dark matter halo. 
 
     It is important to understand the difference between **dark matter halos** and **galaxies**.
     """, unsafe_allow_html=True)
