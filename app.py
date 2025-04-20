@@ -3,14 +3,18 @@ import streamlit as st
 
 st.sidebar.markdown("# Cosmological datasets for geometric deep learning")
 st.sidebar.write("\n\n")
+FP = st.sidebar.button("Front page")
+st.sidebar.write("\n\n")
+st.sidebar.markdown("---")
 st.sidebar.write("Choose the dataset:")
 PC = st.sidebar.button("Point clouds")
 MT = st.sidebar.button("Merger trees")
 st.sidebar.markdown("---")
 glosary = st.sidebar.button("Glosary")
+team = st.sidebar.button("Team")
 
 # Show introduction only if no button is clicked
-if not (PC or MT or glosary):
+if not (PC or MT or glosary or team):
     st.markdown("""
     ### Cosmological datasets for geometric deep learning
 
@@ -71,3 +75,29 @@ The diagram below shows a merger tree from a CAMELS-SAM simulation. The left-mos
     st.image("plots/merger_tree.png", use_container_width=True)
 
     
+if team:
+
+    #st.title('Graphs4cosmo team')
+    #st.text('\n\n')
+    st.image('photos/team.png')
+    #image_paths = ['photos/Teresa.jpeg', 'photos/Richard.jpg', 'photos/Jun-Young.jpeg',
+    #                'photos/Lucia.jpg', 'photos/Charles.png', 'photos/Adrian.jpg',
+    #                'photos/Lawrence.jpg', 'photos/Paco.png']
+    #captions = ['Ningyuan (Teresa) Huang (Flatiron)',
+    #            'Richard Stiskalek (Flatiron/Oxford)',
+    #            'Jun-Young Lee (Seoul)',
+    #            'Lucia Perez (Flatiron)',
+    #            'Charles Margossian (Flatiron)',
+    #            'Adrian Bayer (Princeton/Flatiron)',
+    #            'Lawrence Saul (Flatiron)',
+    #            'Francisco Villaescusa-Navarro (Flatiron)']
+
+    #for row in range(2):
+    #    cols = st.columns(4)
+    #    for col in range(4):
+    #        idx = row * 4 + col
+    #        with cols[col]:
+    #            st.image(image_paths[idx], use_container_width=True)
+    #            st.caption(captions[idx])
+            
+                
