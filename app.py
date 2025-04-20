@@ -10,7 +10,7 @@ st.sidebar.write("Choose the dataset:")
 PC = st.sidebar.button("Point clouds")
 MT = st.sidebar.button("Merger trees")
 st.sidebar.markdown("---")
-glosary = st.sidebar.button("Glosary")
+glosary = st.sidebar.button("Glossary")
 team = st.sidebar.button("Team")
 
 # Show introduction only if no button is clicked
