@@ -1,5 +1,16 @@
 import streamlit as st
 
+st.set_page_config(
+    page_title="CosmoBench",
+    initial_sidebar_state="auto",
+)
+
+st.markdown(
+    """
+    <meta name="google-site-verification" content="1KXQuCy3F-gD6iAFbIf4QnnmXUfWRqP-NYGvjq_b4Wg" />
+    """,
+    unsafe_allow_html=True
+)
 
 st.sidebar.markdown("# Cosmological datasets for geometric deep learning")
 st.sidebar.write("\n\n")
