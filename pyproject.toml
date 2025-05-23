@@ -1,0 +1,10 @@
+[project]
+name = "CosmoBench"
+version = "0.1.0"
+description = "GUI for CosmoBench"
+readme = "README.md"
+dependencies = [
+    "streamlit",
+    "nbformat",
+    "nbconvert",
+    ]

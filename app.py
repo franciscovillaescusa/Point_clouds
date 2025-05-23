@@ -1,20 +1,21 @@
 import streamlit as st
+import requests
+import nbformat
+from nbconvert import PythonExporter
+
+
 
 st.set_page_config(
     page_title="CosmoBench",
     initial_sidebar_state="auto",
+    layout="wide",
 )
 
-st.markdown(
-    """
-    <meta name="google-site-verification" content="1KXQuCy3F-gD6iAFbIf4QnnmXUfWRqP-NYGvjq_b4Wg" />
-    """,
-    unsafe_allow_html=True
-)
 
 st.sidebar.markdown("# Cosmological datasets for geometric deep learning")
 st.sidebar.write("\n\n")
 FP = st.sidebar.button("Front page")
+code = st.sidebar.button('code')
 st.sidebar.write("\n\n")
 st.sidebar.markdown("---")
 st.sidebar.write("**Dataset description:**")
@@ -50,7 +51,7 @@ with col1: glosary = st.button("Glossary")
 with col2: team = st.button("Team")
 
 # Show introduction only if no button is clicked
-if not (PC or MT or glosary or team):
+if not (PC or MT or glosary or team or code):
     st.markdown("""
     ### Cosmological datasets for geometric deep learning
 
@@ -158,27 +159,18 @@ if glosary:
     
 if team:
 
-    #st.title('Graphs4cosmo team')
-    #st.text('\n\n')
     st.image('photos/team.png')
-    #image_paths = ['photos/Teresa.jpeg', 'photos/Richard.jpg', 'photos/Jun-Young.jpeg',
-    #                'photos/Lucia.jpg', 'photos/Charles.png', 'photos/Adrian.jpg',
-    #                'photos/Lawrence.jpg', 'photos/Paco.png']
-    #captions = ['Ningyuan (Teresa) Huang (Flatiron)',
-    #            'Richard Stiskalek (Flatiron/Oxford)',
-    #            'Jun-Young Lee (Seoul)',
-    #            'Lucia Perez (Flatiron)',
-    #            'Charles Margossian (Flatiron)',
-    #            'Adrian Bayer (Princeton/Flatiron)',
-    #            'Lawrence Saul (Flatiron)',
-    #            'Francisco Villaescusa-Navarro (Flatiron)']
-
-    #for row in range(2):
-    #    cols = st.columns(4)
-    #    for col in range(4):
-    #        idx = row * 4 + col
-    #        with cols[col]:
-    #            st.image(image_paths[idx], use_container_width=True)
-    #            st.caption(captions[idx])
-            
                 
+
+if code:
+
+    url = "https://raw.githubusercontent.com/nhuang37/cosmology_benchmark/refs/heads/main/data_tutorial.ipynb"
+    response = requests.get(url)
+    notebook = nbformat.reads(response.text, as_version=4)
+
+    exporter = PythonExporter()
+    source_code, _ = exporter.from_notebook_node(notebook)
+
+    #col1, _ = st.columns([4, 1])  # Wider left column
+    #with col1:
+    st.code(source_code, language='python')
