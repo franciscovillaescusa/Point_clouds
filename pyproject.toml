@@ -1,9 +1,0 @@
-[project]
-name = "CosmoBench"
-version = "0.1.0"
-description = "GUI for CosmoBench"
-dependencies = [
-    "streamlit",
-    "nbformat",
-    "nbconvert",
-    ]
