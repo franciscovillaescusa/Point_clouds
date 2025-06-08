@@ -2,6 +2,7 @@ import streamlit as st
 import requests
 import nbformat
 from nbconvert import PythonExporter
+import numpy as np
 
 
 
@@ -164,13 +165,31 @@ if team:
 
 if code:
 
-    url = "https://raw.githubusercontent.com/nhuang37/cosmology_benchmark/refs/heads/main/data_tutorial.ipynb"
-    response = requests.get(url)
-    notebook = nbformat.reads(response.text, as_version=4)
+    #url = "https://raw.githubusercontent.com/nhuang37/cosmology_benchmark/refs/heads/main/data_tutorial.ipynb"
+    #response = requests.get(url)
+    #notebook = nbformat.reads(response.text, as_version=4)
 
-    exporter = PythonExporter()
-    source_code, _ = exporter.from_notebook_node(notebook)
+    #exporter = PythonExporter()
+    #source_code, _ = exporter.from_notebook_node(notebook)
 
     #col1, _ = st.columns([4, 1])  # Wider left column
     #with col1:
-    st.code(source_code, language='python')
+    #st.code(source_code, language='python')
+
+    with open("code1.md", "r") as f:
+        text = f.read()
+    st.markdown(text, unsafe_allow_html=True)
+    st.image("data_tutorial_files/data_tutorial_7_0.png", caption="Point cloud (with velocity)")
+
+    with open("code2.md", "r") as f:
+        text = f.read()
+    st.markdown(text, unsafe_allow_html=True)
+    st.image("data_tutorial_files/data_tutorial_24_1.png", caption="Point cloud (with velocity)")
+
+    with open("code3.md", "r") as f:
+        text = f.read()
+    st.markdown(text, unsafe_allow_html=True)
+
+
+    
+ 
