@@ -116,7 +116,7 @@ if MT:
 
 - Edges represent progenitor-descendant relationships, pointing from a progenitor halo (earlier time) to its descendant halo (later time). $E=\{(h_i,h_j)|h_i\leftarrow h_j\}$. 
 
-The diagram below shows a merger tree from a CAMELS-SAM simulation. The left-most red point represents a dark matter halo at current time from a CAMELS-SAM simulation. From left to right we go further back in time. The sequence with the red dots is called the main branch. When two or more nodes join, it means that physically, two or several halos has merged to produce a bigger halo.""")
+The diagrams below shows two merger trees from a CAMELS-SAM simulation. Time flows from top to bottom; the point at the bottom represents the halo at current time. The three on the right represents a coaser version of the one on the left. When two or more nodes join, it means that physically, two or several halos has merged to produce a bigger halo.""")
 
     st.image("plots/merger_tree.png", use_container_width=True)
 
