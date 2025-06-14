@@ -116,7 +116,8 @@ if MT:
 
 - Edges represent progenitor-descendant relationships, pointing from a progenitor halo (earlier time) to its descendant halo (later time). $E=\{(h_i,h_j)|h_i\leftarrow h_j\}$. 
 
-The diagrams below shows two merger trees from a CAMELS-SAM simulation. Time flows from top to bottom; the point at the bottom represents the halo at current time. The three on the right represents a coaser version of the one on the left. When two or more nodes join, it means that physically, two or several halos has merged to produce a bigger halo.""")
+
+The figure below shows a fine-grained merger tree (left) and a coarse-grained merger tree (right). The coarse-grained tree is obtained from the fine-grained tree by keeping only nodes in the even time steps (and connecting them). Time flows from top to bottom; the point at the bottom represents the halo at current time. When two or more nodes join, it means that physically, two or several halos has merged to produce a bigger halo.""")
 
     st.image("plots/merger_tree.png", use_container_width=True)
 
